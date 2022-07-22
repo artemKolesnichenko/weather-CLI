@@ -23,5 +23,17 @@ const printHelp = () => {
     )
 }
 
+const printWeather = (res, icon) => {
+    console.log(
+        dedent`${chalk.black.bgBlueBright(' Нехай проблеми та незгоди не роблять Вам в житті погоди ')}
+        Прогноз погоди для міста ${res.name} в данну хвилину:
+        ${icon} ${res.weather[0].description}
+        Температура: ${res.main.temp} (Відчувається як: ${res.main.feels_like})
+        Вологість: ${res.main.humidity}%
+        Швидкість вітру: ${res.wind.speed} м/с
+        `
+    )
+}
 
-export{printError, printSuccess, printHelp}
+
+export{printError, printSuccess, printHelp, printWeather}
